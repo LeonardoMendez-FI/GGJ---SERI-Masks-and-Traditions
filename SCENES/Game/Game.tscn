@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cqktncowtbjgm"]
+
+[ext_resource type="Script" uid="uid://crexl8bq0x7cv" path="res://SCRIPTS/Game/game.gd" id="1_v5vu2"]
+[ext_resource type="PackedScene" uid="uid://bmv27eulyf07f" path="res://SCENES/Components/ItemsSolver.tscn" id="2_w8anh"]
+[ext_resource type="PackedScene" uid="uid://70xm7573sfsg" path="res://SCENES/Components/Player.tscn" id="3_ebmiv"]
+[ext_resource type="PackedScene" uid="uid://pfu1knteg517" path="res://SCENES/Components/Enviroment.tscn" id="3_uvwmf"]
+
+[node name="Game" type="Node3D" unique_id=1474488576]
+script = ExtResource("1_v5vu2")
+
+[node name="ItemsSolver" parent="." unique_id=1293814534 instance=ExtResource("2_w8anh")]
+
+[node name="Player" parent="." unique_id=1016858920 instance=ExtResource("3_ebmiv")]
+
+[node name="Enviroment" parent="." unique_id=1601535337 instance=ExtResource("3_uvwmf")]

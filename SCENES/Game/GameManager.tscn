@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ciplhbmbfn701"]
+
+[ext_resource type="Script" uid="uid://yg2ws7wkrfp6" path="res://SCRIPTS/Game/game_manager.gd" id="1_5qnto"]
+[ext_resource type="PackedScene" uid="uid://cqktncowtbjgm" path="res://SCENES/Game/Game.tscn" id="1_hovq4"]
+[ext_resource type="PackedScene" uid="uid://btnrjovy1v5mt" path="res://SCENES/Game/CinematicSolver.tscn" id="2_5qnto"]
+
+[node name="GameManager" type="Node" unique_id=1984698730]
+script = ExtResource("1_5qnto")
+
+[node name="Game" parent="." unique_id=1474488576 instance=ExtResource("1_hovq4")]
+visible = false
+
+[node name="CinematicSolver" parent="." unique_id=2078552917 instance=ExtResource("2_5qnto")]

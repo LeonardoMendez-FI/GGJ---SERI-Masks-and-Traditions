@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://btnrjovy1v5mt"]
+
+[ext_resource type="Script" uid="uid://cbolwbsx8iusn" path="res://SCRIPTS/Class/CinematicSolver.gd" id="1_s7ybq"]
+[ext_resource type="VideoStream" uid="uid://cljfjpgd72faj" path="res://ASSETS/Video/Menu.ogv" id="2_qd7a0"]
+[ext_resource type="Texture2D" uid="uid://c0y2w2hc7h8pg" path="res://ASSETS/Resources/Images/blanco.dds" id="3_l4oxi"]
+
+[node name="CinematicSolver" type="CanvasLayer" unique_id=2078552917]
+process_mode = 3
+script = ExtResource("1_s7ybq")
+
+[node name="Cinematics" type="Control" parent="." unique_id=519538643]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameCinematic1" type="VideoStreamPlayer" parent="Cinematics" unique_id=1702581162]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_qd7a0")
+expand = true
+
+[node name="GameCinematic2" type="VideoStreamPlayer" parent="Cinematics" unique_id=171278408]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_qd7a0")
+expand = true
+
+[node name="GameCinematic3" type="VideoStreamPlayer" parent="Cinematics" unique_id=845371377]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_qd7a0")
+expand = true
+
+[node name="FinalCinematic" type="VideoStreamPlayer" parent="Cinematics" unique_id=422486376]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_qd7a0")
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=504185209]
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_l4oxi")

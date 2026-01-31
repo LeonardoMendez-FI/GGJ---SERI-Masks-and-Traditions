@@ -1,0 +1,14 @@
+[gd_resource type="Theme" format=3 uid="uid://cah1ov2rkteql"]
+
+[ext_resource type="FontFile" uid="uid://b2s6hm5hlfc27" path="res://ASSETS/Resources/Fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf" id="1_xvtcc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvtcc"]
+bg_color = Color(1, 1, 1, 1)
+shadow_size = 10
+
+[resource]
+HSeparator/constants/separation = 10
+HSeparator/styles/separator = SubResource("StyleBoxFlat_xvtcc")
+Label/colors/font_color = Color(0.96092314, 0.9910303, 0.97891504, 1)
+Label/font_sizes/font_size = 25
+Label/fonts/font = ExtResource("1_xvtcc")

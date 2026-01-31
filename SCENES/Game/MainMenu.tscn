@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dc4x0d8njbixb"]
+
+[ext_resource type="Script" uid="uid://cfifefsgopq21" path="res://SCRIPTS/Game/main_menu.gd" id="1_glbon"]
+[ext_resource type="VideoStream" uid="uid://cljfjpgd72faj" path="res://ASSETS/Video/Menu.ogv" id="2_bin2c"]
+
+[node name="MainMenu" type="Control" unique_id=931696590]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+mouse_filter = 2
+script = ExtResource("1_glbon")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=5392092]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1091369011]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/Control" unique_id=387370596]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_bin2c")
+autoplay = true
+expand = true
+loop = true
+buffering_msec = 100
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control" unique_id=1763438378]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -90.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer" unique_id=912476430]
+self_modulate = Color(1, 1, 1, 0.4627451)
+show_behind_parent = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6862745)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 20
+theme_override_font_sizes/font_size = 20
+text = "Press a key to play..."

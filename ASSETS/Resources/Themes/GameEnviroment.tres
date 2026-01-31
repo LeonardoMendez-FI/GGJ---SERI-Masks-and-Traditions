@@ -1,0 +1,14 @@
+[gd_resource type="Environment" format=3 uid="uid://dk2o6bc7dbpi7"]
+
+[ext_resource type="Texture2D" uid="uid://c1v5suk36tyiy" path="res://ASSETS/Sprites/desierto2.jpeg" id="1_vv5hy"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o3qbn"]
+panorama = ExtResource("1_vv5hy")
+
+[sub_resource type="Sky" id="Sky_kxtj6"]
+sky_material = SubResource("PanoramaSkyMaterial_o3qbn")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_kxtj6")
+sky_rotation = Vector3(3.1415927, 0, 0)

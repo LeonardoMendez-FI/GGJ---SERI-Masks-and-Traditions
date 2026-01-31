@@ -1,0 +1,6 @@
+res://SCRIPTS/Configuration/GameScenes.gd
+res://SCRIPTS/Game/main_menu.gd
+res://SCRIPTS/Class/CinematicSolver.gd
+res://SCRIPTS/Game/game_manager.gd
+res://SCENES/Game/CinematicSolver.tscn
+res://SCENES/Game/MainMenu.tscn

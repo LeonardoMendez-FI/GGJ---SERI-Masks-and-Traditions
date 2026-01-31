@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bmv27eulyf07f"]
+
+[ext_resource type="PackedScene" uid="uid://57abfqxg67d5" path="res://ASSETS/Models/Masks/PickUp1.fbx" id="1_hnpk2"]
+[ext_resource type="PackedScene" uid="uid://glsu6bchbc4q" path="res://ASSETS/Models/Masks/PickUp2.fbx" id="2_oxpv6"]
+[ext_resource type="PackedScene" uid="uid://chqo8280r2nu3" path="res://ASSETS/Models/Masks/PickUp3.fbx" id="3_4xaxr"]
+[ext_resource type="PackedScene" uid="uid://cus2414ikmkkm" path="res://ASSETS/Models/Masks/Máscara.fbx" id="4_oxpv6"]
+
+[node name="PickUpSolver" type="Node3D" unique_id=1293814534]
+
+[node name="PickUp1" parent="." unique_id=1636810310 instance=ExtResource("1_hnpk2")]
+
+[node name="PickUp2" parent="." unique_id=1650498970 instance=ExtResource("2_oxpv6")]
+
+[node name="PickUp3" parent="." unique_id=1302792213 instance=ExtResource("3_4xaxr")]
+
+[node name="Máscara" parent="." unique_id=1714568949 instance=ExtResource("4_oxpv6")]
+visible = false
