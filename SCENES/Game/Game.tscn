@@ -4,6 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://bmv27eulyf07f" path="res://SCENES/Components/ItemsSolver.tscn" id="2_w8anh"]
 [ext_resource type="PackedScene" uid="uid://70xm7573sfsg" path="res://SCENES/Components/Player.tscn" id="3_ebmiv"]
 [ext_resource type="PackedScene" uid="uid://pfu1knteg517" path="res://SCENES/Components/Enviroment.tscn" id="3_uvwmf"]
+[ext_resource type="PackedScene" uid="uid://crvx00505bpm6" path="res://SCENES/Game/ForcesManager.tscn" id="5_ebmiv"]
+[ext_resource type="Script" uid="uid://dud6k667hnfaq" path="res://SCRIPTS/Class/EnumStages.gd" id="6_5ih6b"]
+[ext_resource type="Resource" uid="uid://crbujmft6d7i0" path="res://ASSETS/Resources/Themes/DesertStage1.tres" id="7_yb728"]
+[ext_resource type="Resource" uid="uid://c60idrtxh4oo1" path="res://ASSETS/Resources/Themes/DesertStage2.tres" id="8_hqs6k"]
+[ext_resource type="Resource" uid="uid://dimgjfabfqkd5" path="res://ASSETS/Resources/Themes/DesertStage3.tres" id="9_gxo6m"]
+[ext_resource type="AudioStream" uid="uid://c01t55qn2msic" path="res://ASSETS/Audio/Night at the Beach.ogg" id="10_5ih6b"]
+[ext_resource type="PackedScene" uid="uid://ddyd7bp5mnkfu" path="res://SCENES/Game/GameUI.tscn" id="11_yb728"]
 
 [node name="Game" type="Node3D" unique_id=1474488576]
 script = ExtResource("1_v5vu2")
@@ -13,3 +20,14 @@ script = ExtResource("1_v5vu2")
 [node name="Player" parent="." unique_id=1016858920 instance=ExtResource("3_ebmiv")]
 
 [node name="Enviroment" parent="." unique_id=1601535337 instance=ExtResource("3_uvwmf")]
+
+[node name="ForcesManager" parent="." unique_id=1700293308 instance=ExtResource("5_ebmiv")]
+stages = Array[ExtResource("6_5ih6b")]([ExtResource("7_yb728"), ExtResource("8_hqs6k"), ExtResource("9_gxo6m")])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1770949134]
+stream = ExtResource("10_5ih6b")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="UI_Game" parent="." unique_id=1906324692 instance=ExtResource("11_yb728")]

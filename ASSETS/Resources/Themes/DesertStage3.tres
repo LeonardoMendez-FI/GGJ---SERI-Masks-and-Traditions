@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Stages_List" format=3 uid="uid://dimgjfabfqkd5"]
+
+[ext_resource type="Resource" uid="uid://c3mj1qev6e0on" path="res://ASSETS/Resources/Themes/DesertForces.tres" id="1_33h00"]
+[ext_resource type="Script" uid="uid://dud6k667hnfaq" path="res://SCRIPTS/Class/EnumStages.gd" id="2_5g4w0"]
+
+[resource]
+script = ExtResource("2_5g4w0")
+Stage = 2
+Forces = ExtResource("1_33h00")
+Creator = Dictionary[int, int]({
+0: 0,
+1: 70,
+2: 50,
+3: 30
+})
+Multiplicator = Dictionary[int, int]({
+1: 100,
+2: 60,
+3: 40
+})
+metadata/_custom_type_script = "uid://dud6k667hnfaq"

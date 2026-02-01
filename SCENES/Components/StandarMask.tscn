@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://xqf7mrfixgog"]
+
+[ext_resource type="Script" uid="uid://dpo1u4o47hwnm" path="res://SCRIPTS/Components/ItemClass.gd" id="1_k0mwp"]
+[ext_resource type="AudioStream" uid="uid://habkhrfdedrp" path="res://ASSETS/Audio/Jewel_Collect.wav" id="2_n8w8s"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a0lkc"]
+radius = 1.3876953
+height = 3.4560547
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k0mwp"]
+emission_shape = 1
+emission_sphere_radius = 0.5
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, 80, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n8w8s"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0.84379876, 0.8959887, 0.24705882)
+
+[sub_resource type="SphereMesh" id="SphereMesh_b566e"]
+material = SubResource("StandardMaterial3D_n8w8s")
+radius = 0.3
+height = 0.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i1gwg"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_color = Color(0.75686276, 0.105882354, 1, 0.019607844)
+
+[sub_resource type="SphereMesh" id="SphereMesh_n52i8"]
+material = SubResource("StandardMaterial3D_i1gwg")
+radius = 1.5
+height = 20.0
+
+[node name="Standar_Mask" type="Area3D" unique_id=1875719348]
+transform = Transform3D(9.999999, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+collision_layer = 8
+script = ExtResource("1_k0mwp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2100905217]
+transform = Transform3D(1.0000001, 6.617446e-24, 9.926524e-24, -6.6174465e-24, 1.0000002, -3.673937e-08, -9.926643e-24, 3.673937e-08, 1.0000002, 4.7062073e-24, 0.71118194, 2.6128145e-08)
+shape = SubResource("CapsuleShape3D_a0lkc")
+
+[node name="Effects" type="AudioStreamPlayer3D" parent="." unique_id=1075935767]
+stream = ExtResource("2_n8w8s")
+bus = &"SFX"
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=970025899]
+amount = 500
+lifetime = 30.0
+process_material = SubResource("ParticleProcessMaterial_k0mwp")
+draw_passes = 2
+draw_pass_1 = SubResource("SphereMesh_b566e")
+draw_pass_2 = SubResource("SphereMesh_n52i8")

@@ -122,4 +122,3 @@ func set_render_layer_mask(mask: int):
 func set_cast_shadow_setting(setting: int):
 	assert(_mesh_instance != RID())
 	RenderingServer.instance_geometry_set_cast_shadows_setting(_mesh_instance, setting)
-

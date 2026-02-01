@@ -14,10 +14,12 @@ func _ready() -> void:
 			child.connect("finished", on_video_finished)
 			cinematics.append(new_cinematic)
 
-func play_next() -> void:
-	var next_index:int = current_index + 1
-	if cinematics.size() <= next_index:
-		return
+func play_next(repeat:bool = false) -> void:
+	var next_index:int = current_index
+	if repeat:
+		next_index += 1
+		if cinematics.size() <= next_index:
+			return
 
 	current_index = next_index
 	current_cinematic = cinematics[next_index]
@@ -27,6 +29,7 @@ func play_next() -> void:
 	current_cinematic.show()
 	font_out()
 	current_cinematic.play()
+	await current_cinematic.finished
 	
 func on_video_finished() -> void:
 	current_cinematic.stop()

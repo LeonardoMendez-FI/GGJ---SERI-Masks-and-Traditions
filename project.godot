@@ -21,6 +21,10 @@ boot_splash/bg_color=Color(0.009196962, 0.15832567, 0.21266791, 1)
 boot_splash/stretch_mode=4
 boot_splash/image="uid://btmyr7tubiko1"
 
+[audio]
+
+buses/default_bus_layout="uid://epmag35i3ili"
+
 [autoload]
 
 GameConstants="*uid://cpk1ttep4kb4o"

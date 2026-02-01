@@ -1,11 +1,12 @@
-res://ASSETS/Resources/Themes/
-res://SCRIPTS/Game/
+res://SCRIPTS/Components/
 res://SCENES/Game/
-res://SCRIPTS/Class/
 res://SCENES/Components/
+res://ASSETS/Resources/Themes/
+res://SCRIPTS/Class/
+res://SCRIPTS/Class/StateMachine/
+res://SCRIPTS/Game/
 res://ASSETS/Resources/
 res://SCENES/Components/Terrain/
 res://
 res://ASSETS/Sprites/
-res://SCRIPTS/Components/
 res://ASSETS/Models/Terrain/

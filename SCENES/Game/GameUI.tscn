@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://ddyd7bp5mnkfu"]
+
+[ext_resource type="Texture2D" uid="uid://yn417pchkh3q" path="res://ASSETS/Sprites/Icon_Png.png" id="1_s5fc5"]
+[ext_resource type="Texture2D" uid="uid://bmwac0xh1mxg7" path="res://ASSETS/Sprites/IconMask1.png" id="2_rrrns"]
+
+[sub_resource type="Theme" id="Theme_hqs6k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqs6k"]
+bg_color = Color(0.2670257, 0.054732986, 0.08914883, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k7ojr"]
+bg_color = Color(0.6733747, 0.31431064, 0.23826945, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxo6m"]
+bg_color = Color(0.09505951, 0.21881893, 0.268386, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxhmn"]
+bg_color = Color(0.22197497, 0.5016713, 0.3301765, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="UI_Game" type="CanvasLayer" unique_id=1906324692]
+
+[node name="Control" type="Control" parent="." unique_id=1480485457]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=8707391]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 432.0
+offset_right = 454.0
+offset_bottom = 611.0
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer" unique_id=2028539524]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_hqs6k")
+texture = ExtResource("1_s5fc5")
+expand_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/HBoxContainer" unique_id=2039842143]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Control/HBoxContainer/HBoxContainer" unique_id=1081648296]
+z_index = 1
+layout_mode = 2
+texture = ExtResource("2_rrrns")
+expand_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/HBoxContainer/HBoxContainer" unique_id=1934889255]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme_override_constants/margin_left = -70
+theme_override_constants/margin_bottom = -66
+
+[node name="StagesCount" type="ProgressBar" parent="Control/HBoxContainer/HBoxContainer/MarginContainer" unique_id=1523338904]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.77254903)
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 4.0
+theme_override_styles/background = SubResource("StyleBoxFlat_hqs6k")
+theme_override_styles/fill = SubResource("StyleBoxFlat_k7ojr")
+max_value = 3.0
+step = 1.0
+rounded = true
+show_percentage = false
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1376664179]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 5
+
+[node name="EnergyBar" type="ProgressBar" parent="Control/MarginContainer" unique_id=1144188957]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.77254903)
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_gxo6m")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rxhmn")
+max_value = 600.0
+step = 0.001
+value = 600.0
+rounded = true
