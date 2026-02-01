@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://dc4x0d8njbixb"]
+
+[ext_resource type="Script" uid="uid://ciqnbvhic6mvo" path="res://main_menu.gd" id="1_yisah"]
+[ext_resource type="Texture2D" uid="uid://dbga288cbafnw" path="res://Fondo.png" id="2_vylsh"]
+[ext_resource type="Texture2D" uid="uid://bbfih7bd1ud2p" path="res://ASSETS/Sprites/simpleExplosion01.png" id="3_p3oxi"]
+[ext_resource type="Texture2D" uid="uid://bpcddps4cg72d" path="res://Jugar.png" id="4_5e5jp"]
+[ext_resource type="Texture2D" uid="uid://y36ns7rs2nbo" path="res://Ajustes.png" id="5_etfdo"]
+[ext_resource type="AudioStream" uid="uid://bq6uqdu1ymir1" path="res://Night at the Beach.ogg" id="6_h4t81"]
+[ext_resource type="Texture2D" uid="uid://dyn0gy6optf3r" path="res://Titutlo.png" id="7_ya6h1"]
+[ext_resource type="AudioStream" uid="uid://h7x5dd7ou1ne" path="res://confirmation_001.ogg" id="8_ksuoe"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0o4t1"]
+texture = ExtResource("2_vylsh")
+modulate_color = Color(0.6706898, 0.6706894, 0.6706895, 1)
+
+[node name="MainMenu" type="Control" unique_id=1629005902]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+mouse_filter = 2
+script = ExtResource("1_yisah")
+
+[node name="Panel" type="Panel" parent="." unique_id=213852416]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.04824, 16.27011)
+theme_override_styles/panel = SubResource("StyleBoxTexture_0o4t1")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2024911277]
+position = Vector2(851, 168)
+scale = Vector2(2.197368, 2.5664442)
+color = Color(0.5126923, 0.08165779, 4.813075e-08, 1)
+shadow_enabled = true
+shadow_color = Color(0.7885041, 0.7885041, 0.7885041, 0.8980392)
+texture = ExtResource("3_p3oxi")
+
+[node name="JugarButton" type="TextureButton" parent="." unique_id=208786410]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 343.0
+offset_right = 1418.0
+offset_bottom = 824.0
+scale = Vector2(0.35, 0.35)
+focus_neighbor_left = NodePath("../AjustesButton")
+focus_neighbor_top = NodePath("../AjustesButton")
+focus_neighbor_right = NodePath("../AjustesButton")
+focus_neighbor_bottom = NodePath("../AjustesButton")
+action_mode = 0
+texture_normal = ExtResource("4_5e5jp")
+
+[node name="PointLight2D" type="PointLight2D" parent="JugarButton" unique_id=1297141255]
+position = Vector2(505.71432, 225.71432)
+scale = Vector2(7.835055, 3.8455677)
+enabled = false
+color = Color(0.5126923, 0.08165779, 4.813075e-08, 1)
+shadow_enabled = true
+shadow_color = Color(0.2159017, 0.21590173, 0.21590167, 0)
+texture = ExtResource("3_p3oxi")
+
+[node name="AjustesButton" type="TextureButton" parent="." unique_id=66667100]
+light_mask = 3
+visibility_layer = 3
+layout_mode = 0
+offset_left = 775.0
+offset_top = 456.0
+offset_right = 1776.0
+offset_bottom = 930.0
+scale = Vector2(0.35, 0.35)
+focus_neighbor_left = NodePath("../JugarButton")
+focus_neighbor_top = NodePath("../JugarButton")
+focus_neighbor_right = NodePath("../JugarButton")
+focus_neighbor_bottom = NodePath("../JugarButton")
+texture_normal = ExtResource("5_etfdo")
+
+[node name="PointLight2D" type="PointLight2D" parent="AjustesButton" unique_id=1931697917]
+position = Vector2(505.71432, 225.71432)
+scale = Vector2(7.835055, 3.8455677)
+enabled = false
+color = Color(0.5126923, 0.08165779, 4.813075e-08, 1)
+shadow_enabled = true
+shadow_color = Color(0.2159017, 0.21590173, 0.21590167, 0)
+texture = ExtResource("3_p3oxi")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1250894863]
+stream = ExtResource("6_h4t81")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="Label" type="Label" parent="." unique_id=376547751]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Titutlo" type="Sprite2D" parent="." unique_id=184827437]
+position = Vector2(150, 63)
+scale = Vector2(2.12, 2.12)
+texture = ExtResource("7_ya6h1")
+
+[node name="AudioStreamConfirm" type="AudioStreamPlayer" parent="." unique_id=672192314]
+stream = ExtResource("8_ksuoe")
+bus = &"SFX"
+
+[connection signal="focus_entered" from="JugarButton" to="." method="_on_jugar_button_focus_entered"]
+[connection signal="focus_exited" from="JugarButton" to="." method="_on_jugar_button_focus_exited"]
+[connection signal="pressed" from="JugarButton" to="." method="_on_jugar_button_pressed"]
+[connection signal="focus_entered" from="AjustesButton" to="." method="_on_ajustes_button_focus_entered"]
+[connection signal="focus_exited" from="AjustesButton" to="." method="_on_ajustes_button_focus_exited"]
+[connection signal="pressed" from="AjustesButton" to="." method="_on_ajustes_button_pressed"]

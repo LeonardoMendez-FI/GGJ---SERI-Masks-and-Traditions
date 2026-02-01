@@ -1,0 +1,239 @@
+[gd_scene format=3 uid="uid://ccgecnb6y1pea"]
+
+[ext_resource type="Script" uid="uid://dn3pik6xek20c" path="res://opciones.gd" id="1_7yv08"]
+[ext_resource type="Texture2D" uid="uid://dbga288cbafnw" path="res://Fondo.png" id="1_j8itn"]
+[ext_resource type="Texture2D" uid="uid://bg56lyoxga6en" path="res://ChileMas.png" id="2_7yv08"]
+[ext_resource type="Texture2D" uid="uid://1g01qhvrtb0w" path="res://ChileMenos.png" id="3_4134h"]
+[ext_resource type="Texture2D" uid="uid://dfjxoatj2f4j" path="res://Inciar2.png" id="4_vspls"]
+[ext_resource type="Texture2D" uid="uid://bajsbnexnfc77" path="res://tile_0086.png" id="6_bjjs3"]
+[ext_resource type="Script" uid="uid://dq6blni0j2u7k" path="res://music_slider.gd" id="6_nujng"]
+[ext_resource type="Texture2D" uid="uid://bbfih7bd1ud2p" path="res://ASSETS/Sprites/simpleExplosion01.png" id="6_oqyl5"]
+[ext_resource type="Texture2D" uid="uid://33yfn2xev4jp" path="res://tile_0120.png" id="7_0yjkm"]
+[ext_resource type="Texture2D" uid="uid://bxcnak8ne6wel" path="res://tile_0121.png" id="8_nujng"]
+[ext_resource type="Texture2D" uid="uid://bh0e1m0mtryh7" path="res://tile_0122.png" id="9_xqagu"]
+[ext_resource type="Texture2D" uid="uid://dsfioj4k5dfqu" path="res://tile_0153.png" id="10_0yjkm"]
+[ext_resource type="AudioStream" uid="uid://bq6uqdu1ymir1" path="res://Night at the Beach.ogg" id="12_xqagu"]
+[ext_resource type="Script" uid="uid://cpf8n7ahhxpoj" path="res://sfx_slider.gd" id="13_pq76h"]
+[ext_resource type="AudioStream" uid="uid://b30ugaefccniy" path="res://back_001.ogg" id="14_fwfbc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fm522"]
+texture = ExtResource("1_j8itn")
+modulate_color = Color(0.6706898, 0.6706894, 0.6706895, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_a5ebf"]
+color = Color(0.06591457, 0.21970254, 0, 1)
+thickness = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahv07"]
+bg_color = Color(0.30588236, 0.81960785, 0.30588236, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_etejr"]
+bg_color = Color(0.76240367, 0.7624037, 0.7624035, 1)
+
+[node name="Opciones" type="Control" unique_id=2036455293]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7yv08")
+
+[node name="Panel" type="Panel" parent="." unique_id=1660886828]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.04824, 16.27011)
+theme_override_styles/panel = SubResource("StyleBoxTexture_fm522")
+
+[node name="Label" type="Label" parent="." unique_id=933642999]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.057291668
+anchor_top = 0.046296295
+anchor_right = 0.20833333
+anchor_bottom = 0.11419753
+offset_right = 88.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 48
+text = "Vol. Musica"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="." unique_id=2107340183]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.057291668
+anchor_top = 0.80401236
+anchor_right = 0.20833333
+anchor_bottom = 0.87191355
+offset_right = 88.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 48
+text = "Controles"
+metadata/_edit_use_anchors_ = true
+
+[node name="ChileMas" type="Sprite2D" parent="." unique_id=355108937]
+position = Vector2(567.6175, 151.2)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_7yv08")
+
+[node name="ChileMenos" type="Sprite2D" parent="." unique_id=1321880784]
+position = Vector2(75.6175, 148.19998)
+scale = Vector2(0.185, 0.185)
+texture = ExtResource("3_4134h")
+
+[node name="InicioButton" type="TextureButton" parent="." unique_id=1995210799]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.8484107
+anchor_top = 4.3571444
+anchor_right = 1.8484107
+anchor_bottom = 4.3571444
+offset_left = -1354.3694
+offset_top = -2367.4294
+offset_right = -338.36914
+offset_bottom = -1881.4294
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.35, 0.35)
+focus_neighbor_left = NodePath("../MusicSlider")
+focus_neighbor_top = NodePath("../MusicSlider")
+focus_neighbor_right = NodePath("../MusicSlider")
+focus_neighbor_bottom = NodePath("../MusicSlider")
+texture_normal = ExtResource("4_vspls")
+metadata/_edit_use_anchors_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="InicioButton" unique_id=1893046311]
+position = Vector2(505.71432, 225.71432)
+scale = Vector2(7.835055, 3.8455677)
+enabled = false
+color = Color(0.5126923, 0.08165779, 4.813075e-08, 1)
+shadow_enabled = true
+shadow_color = Color(0.2159017, 0.21590173, 0.21590167, 0)
+texture = ExtResource("6_oqyl5")
+
+[node name="MusicSlider" type="HSlider" parent="." unique_id=522937165]
+layout_mode = 0
+offset_left = 111.6175
+offset_top = 132.19998
+offset_right = 520.6175
+offset_bottom = 174.19998
+focus_neighbor_top = NodePath("../SFXSlider")
+focus_neighbor_bottom = NodePath("../SFXSlider")
+theme_override_styles/slider = SubResource("StyleBoxLine_a5ebf")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ahv07")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_etejr")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("6_nujng")
+audio_bus_name = "Music"
+
+[node name="Tile0086" type="Sprite2D" parent="." unique_id=1570001246]
+position = Vector2(428.99997, 484)
+scale = Vector2(6, 6)
+texture = ExtResource("6_bjjs3")
+
+[node name="Tile0120" type="Sprite2D" parent="." unique_id=1725186907]
+position = Vector2(357, 555)
+scale = Vector2(6, 6)
+texture = ExtResource("7_0yjkm")
+
+[node name="Tile0121" type="Sprite2D" parent="." unique_id=1631139463]
+position = Vector2(425.99997, 555)
+scale = Vector2(6, 6)
+texture = ExtResource("8_nujng")
+
+[node name="Tile0122" type="Sprite2D" parent="." unique_id=1267764544]
+position = Vector2(496.99997, 554)
+scale = Vector2(6, 6)
+texture = ExtResource("9_xqagu")
+
+[node name="Label3" type="Label" parent="." unique_id=1332990717]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2560764
+anchor_top = 0.89660496
+anchor_right = 0.40711805
+anchor_bottom = 0.96450615
+offset_right = 88.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 48
+text = "Moverse"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Tile0153" type="Sprite2D" parent="." unique_id=654263229]
+position = Vector2(636, 548)
+scale = Vector2(6, 6)
+texture = ExtResource("10_0yjkm")
+
+[node name="Label4" type="Label" parent="." unique_id=1802841577]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4392361
+anchor_top = 0.89660496
+anchor_right = 0.5902778
+anchor_bottom = 0.96450615
+offset_right = 88.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 48
+text = "Saltar"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=619164978]
+stream = ExtResource("12_xqagu")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="Label5" type="Label" parent="." unique_id=620448651]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.057291668
+anchor_top = 0.35030866
+anchor_right = 0.20833333
+anchor_bottom = 0.41820988
+offset_right = 88.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 48
+text = "Vol. SFX"
+metadata/_edit_use_anchors_ = true
+
+[node name="SFXSlider" type="HSlider" parent="." unique_id=118432828]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 329.0
+offset_right = 521.0
+offset_bottom = 371.0
+focus_neighbor_top = NodePath("../MusicSlider")
+focus_neighbor_bottom = NodePath("../InicioButton")
+theme_override_styles/slider = SubResource("StyleBoxLine_a5ebf")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_ahv07")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_etejr")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("13_pq76h")
+audio_bus_name = "SFX"
+
+[node name="ChileMas2" type="Sprite2D" parent="." unique_id=830792026]
+position = Vector2(568, 340)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_7yv08")
+
+[node name="ChileMenos2" type="Sprite2D" parent="." unique_id=1157617306]
+position = Vector2(76, 344)
+scale = Vector2(0.185, 0.185)
+texture = ExtResource("3_4134h")
+
+[node name="AudioStreamBack" type="AudioStreamPlayer" parent="." unique_id=1923581111]
+stream = ExtResource("14_fwfbc")
+bus = &"SFX"
+
+[connection signal="focus_entered" from="InicioButton" to="." method="_on_inicio_button_focus_entered"]
+[connection signal="focus_exited" from="InicioButton" to="." method="_on_inicio_button_focus_exited"]
+[connection signal="pressed" from="InicioButton" to="." method="_on_inicio_button_pressed"]
+[connection signal="value_changed" from="MusicSlider" to="MusicSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="SFXSlider" to="SFXSlider" method="_on_value_changed"]
