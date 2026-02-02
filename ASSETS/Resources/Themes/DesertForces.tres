@@ -1,7 +1,9 @@
 [gd_resource type="Resource" script_class="Forces_List" format=3 uid="uid://c3mj1qev6e0on"]
 
+[ext_resource type="PackedScene" uid="uid://bcma0frmesksm" path="res://SCENES/Components/NatureForces/Tent_Trap.tscn" id="1_6nxhl"]
 [ext_resource type="Script" uid="uid://dmjifk4quwtq0" path="res://SCRIPTS/Class/EnumForces.gd" id="1_l3qfs"]
 
 [resource]
 script = ExtResource("1_l3qfs")
+R1_Forces = Array[PackedScene]([ExtResource("1_6nxhl")])
 metadata/_custom_type_script = "uid://dmjifk4quwtq0"

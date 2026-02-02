@@ -15,7 +15,6 @@ current_items:Array[ItemClass], current_terrain:Terrain3D) -> void:
 	player = current_player
 	items = current_items
 	terrain = current_terrain
-	
 	change_stage()
 
 func change_stage() -> void:
@@ -40,10 +39,8 @@ func change_stage() -> void:
 		await create_forces(item)
 
 func get_nearest_item() -> ItemClass:
-	
+	items = items.filter(is_instance_valid)
 	var nearest_item:ItemClass = null
-	if items.any(func(i): return !is_instance_valid(i)):
-		items = items.filter(is_instance_valid)
 
 	if items.is_empty():
 		return null
@@ -51,7 +48,6 @@ func get_nearest_item() -> ItemClass:
 	var nearest_distance:float = INF
 	
 	for item in items:
-			
 		var item_pos:Vector3 = item.global_transform.origin
 		var player_pos:Vector3 = player.global_transform.origin
 		var aux_distance = item_pos.distance_to(player_pos)
@@ -62,7 +58,6 @@ func get_nearest_item() -> ItemClass:
 	return nearest_item
 
 func create_forces(item:ItemClass) -> void:
-	
 	var multiplier = get_multiplier()
 	if multiplier == 0:
 		await get_tree().create_timer(1).timeout
@@ -72,23 +67,23 @@ func create_forces(item:ItemClass) -> void:
 	if forces_escenes.is_empty():
 		await get_tree().create_timer(1).timeout
 		return
-	var last_force:NatureForce
+	var last_force:StandardForce
 		
 	for force in forces_escenes:
 		if not machine_running:
 			break
-		var new_force = force.instantiate() as NatureForce
+		var new_force = force.instantiate() as StandardForce
 		if new_force == null:
 			continue
-		add_child(new_force)
 		last_force = new_force
-		new_force.start(player, item, terrain)
+		if is_instance_valid(item):
+			new_force._create(self, item)
 		await get_tree().create_timer(randf_range(2.0,4.0)).timeout
 		if not machine_running:
 			break
-
+	
 	if machine_running and last_force and is_instance_valid(last_force):
-			await last_force.force_finished
+		await last_force.finished_trap
 
 func get_multiplier() -> int:
 	var multipliers = stages[stage_index].Multiplicator
@@ -109,15 +104,22 @@ func get_forces_scenes(multiplier:int) -> Array[PackedScene]:
 	var creator = stages[stage_index].Creator
 	var forces_list = stages[stage_index].Forces
 	
-	var keys = creator.keys()
-	keys.sort()
-	keys.reverse()
+	# Orden fijo: mayor rango primero
+	var ordered_ranges = [
+		GameConstants.FORCES_RANGE.Range4,
+		GameConstants.FORCES_RANGE.Range3,
+		GameConstants.FORCES_RANGE.Range2,
+		GameConstants.FORCES_RANGE.Range1
+	]
 
 	for i in range(multiplier):
-		for key in keys:
+		var chosen:PackedScene = null
+
+		for key in ordered_ranges:
+			if not creator.has(key):
+				continue
+
 			if randi_range(0,100) <= creator[key]:
-				var chosen:PackedScene = null
-				
 				match key:
 					GameConstants.FORCES_RANGE.Range1:
 						chosen = pick_random(forces_list.R1_Forces)
@@ -127,12 +129,19 @@ func get_forces_scenes(multiplier:int) -> Array[PackedScene]:
 						chosen = pick_random(forces_list.R3_Forces)
 					GameConstants.FORCES_RANGE.Range4:
 						chosen = pick_random(forces_list.R4_Forces)
-				
+
 				if chosen:
 					forces.append(chosen)
-				break
-
+					break
+		
+		# Seguridad: si nada salió pero existe R1, usamos R1
+		if chosen == null and creator.has(GameConstants.FORCES_RANGE.Range1):
+			var fallback = pick_random(forces_list.R1_Forces)
+			if fallback:
+				forces.append(fallback)
+				
 	return forces
+
 
 func pick_random(arr:Array):
 	if arr.is_empty():

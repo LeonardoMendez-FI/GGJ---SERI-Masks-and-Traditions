@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b2bxi5ny8rrfk"]
+
+[ext_resource type="Script" uid="uid://btyht6i1yo14o" path="res://SCRIPTS/Class/StandardForce.gd" id="1_8tjm0"]
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" unique_id=1735372303]
+constant_linear_velocity = Vector3(0, 40, 0)
+script = ExtResource("1_8tjm0")
+metadata/_custom_type_script = "uid://btyht6i1yo14o"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=237230264]

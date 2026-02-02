@@ -6,22 +6,20 @@ class_name GameClass
 @onready var forces_manager: ForcesManager = $ForcesManager
 @onready var energy_bar: ProgressBar = $UI_Game/%EnergyBar
 @onready var stages_count: ProgressBar = $UI_Game/%StagesCount
+@onready var audio:AudioStreamPlayer3D = $AudioStreamPlayer
 var player_last_position:Vector3
 var respawning:bool = false
 
-var energy_drain: float = 30
+var energy_drain: float = 1
 
 func _ready() -> void:
 	terrain = $Enviroment.get_node("DesertTerrain")
 	var item_solver:ItemsSolver = $ItemsSolver
-	
-	forces_manager.items = item_solver.item_pool
-	forces_manager.player = player
-	forces_manager.terrain = terrain
-	
 	player_last_position = player.global_transform.origin
 	player.empty_energy.connect(_on_player_energy_empty)
-	item_solver.start(self)
+	await item_solver.start(self)
+	await get_tree().create_timer(5).timeout
+	forces_manager.turn_on_machine(player, item_solver.item_pool, terrain)
 
 func _process(delta: float) -> void:
 	player.energy = max(0, player.energy - energy_drain * delta)
@@ -31,8 +29,6 @@ func _taked_item(item: ItemClass) -> void:
 	
 	player_last_position = player.global_transform.origin
 	player.energy = 600
-	
-	var audio: AudioStreamPlayer = $AudioStreamPlayer
 	
 	# Fade OUT audio
 	var tween_out = create_tween()
@@ -73,10 +69,7 @@ func _on_player_energy_empty() -> void:
 	if respawning:
 		return
 	respawning = true
-	player.set_physics_process(false)
 	
-	var audio: AudioStreamPlayer = $AudioStreamPlayer
-
 	# Fade OUT
 	var tween_out = create_tween()
 	tween_out.tween_property(audio, "volume_db", -80, 2)
@@ -88,7 +81,7 @@ func _on_player_energy_empty() -> void:
 		var game_manager := parent as GameManager
 		await game_manager._change_stage(true)
 
-	# Respawn jugador
+	#Player Respawn 
 	player.velocity = Vector3.ZERO
 	player.global_position = player_last_position
 	player.energy = 600
@@ -99,4 +92,3 @@ func _on_player_energy_empty() -> void:
 	await tween_in.finished
 
 	respawning = false
-	player.set_physics_process(true)

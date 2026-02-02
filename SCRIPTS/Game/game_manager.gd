@@ -7,6 +7,7 @@ class_name GameManager
 func _ready() -> void:
 	cinematic_solver.play_next()
 	game.visible = true
+	game.audio.volume_db = 0.0
 
 func _change_stage(repeat:bool = false) -> void:
 	await cinematic_solver.play_next(repeat)

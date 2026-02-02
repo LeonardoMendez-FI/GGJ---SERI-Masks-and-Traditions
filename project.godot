@@ -33,6 +33,7 @@ GameScenes="*uid://dhw8k0rt0tkj3"
 
 [display]
 
+window/size/mode=4
 window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"

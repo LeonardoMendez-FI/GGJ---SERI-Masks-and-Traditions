@@ -1,8 +1,11 @@
+res://ASSETS/Resources/Themes/
+res://SCENES/Components/NatureForces/
+res://ASSETS/Models/Traps/
+res://SCRIPTS/Class/
+res://SCRIPTS/Components/NatureForces/
 res://SCRIPTS/Components/
 res://SCENES/Game/
 res://SCENES/Components/
-res://ASSETS/Resources/Themes/
-res://SCRIPTS/Class/
 res://SCRIPTS/Class/StateMachine/
 res://SCRIPTS/Game/
 res://ASSETS/Resources/

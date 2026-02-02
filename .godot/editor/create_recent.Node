@@ -1,3 +1,7 @@
+AudioStreamPlayer3D
+MeshInstance3D
+CollisionShape3D
+AnimatableBody3D
 GPUParticles3D
 MarginContainer
 HBoxContainer
@@ -5,11 +9,6 @@ VBoxContainer
 TextureRect
 Node3D
 Node
-AudioStreamPlayer3D
-CollisionShape3D
 Area3D
 Label
 PanelContainer
-ProgressBar
-Node2D
-Camera3D

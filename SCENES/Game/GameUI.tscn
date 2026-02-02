@@ -24,7 +24,7 @@ corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxo6m"]
-bg_color = Color(0.09505951, 0.21881893, 0.268386, 1)
+bg_color = Color(0.6119606, 0.15976155, 0.13562378, 1)
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
@@ -32,10 +32,10 @@ corner_radius_bottom_left = 30
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxhmn"]
 bg_color = Color(0.22197497, 0.5016713, 0.3301765, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30

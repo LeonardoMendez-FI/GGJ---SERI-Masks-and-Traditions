@@ -40,8 +40,7 @@ materials/extract_path=""
 _subresources={
 "nodes": {
 "PATH:canoe": {
-"generate/physics": true,
-"physics/layer": 0,
+"node/script": Resource("uid://btyht6i1yo14o", "res://SCRIPTS/Class/StandardForce.gd"),
 "physics/mask": 128,
 "physics/shape_type": 3
 }

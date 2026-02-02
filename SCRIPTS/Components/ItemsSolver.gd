@@ -15,7 +15,7 @@ func start(game:GameClass) -> void:
 	
 	# Pequeña pausa para que todo esté listo
 	await get_tree().process_frame
-	distribute(game.terrain)
+	await distribute(game.terrain)
 
 
 func distribute(terrain:Terrain3D) -> void:
@@ -71,7 +71,7 @@ func distribute(terrain:Terrain3D) -> void:
 		var final_position = horizontal_pos
 
 		# Si golpea terreno
-		if hit.z < 3.4e38:
+		if hit.y < 3.4e38:
 			final_position.y = hit.y + 3  # pequeño offset
 		else:
 			final_position.y = center_position.y + height
@@ -79,8 +79,7 @@ func distribute(terrain:Terrain3D) -> void:
 		spread_tween.tween_property(
 			item, "global_position", final_position, spread_duration
 		)
-
-
+	
 	await spread_tween.finished
 
 	_on_distribution_complete()
@@ -89,6 +88,5 @@ func distribute(terrain:Terrain3D) -> void:
 func _on_distribution_complete() -> void:
 	for item in item_pool:
 		if is_instance_valid(item):
-			# Activar colisión con call_deferred para seguridad
 			item.collision.set_deferred("disabled", false)
 	current_tween = null

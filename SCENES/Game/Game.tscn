@@ -24,10 +24,11 @@ script = ExtResource("1_v5vu2")
 [node name="ForcesManager" parent="." unique_id=1700293308 instance=ExtResource("5_ebmiv")]
 stages = Array[ExtResource("6_5ih6b")]([ExtResource("7_yb728"), ExtResource("8_hqs6k"), ExtResource("9_gxo6m")])
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1770949134]
+[node name="UI_Game" parent="." unique_id=1906324692 instance=ExtResource("11_yb728")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="." unique_id=819280710]
 stream = ExtResource("10_5ih6b")
+attenuation_model = 3
+volume_db = -80.0
 autoplay = true
 bus = &"Music"
-parameters/looping = true
-
-[node name="UI_Game" parent="." unique_id=1906324692 instance=ExtResource("11_yb728")]

@@ -6,8 +6,9 @@
 [ext_resource type="Script" uid="uid://ds14rhh8uw1b" path="res://SCRIPTS/Components/PlayerCamera.gd" id="5_3wabt"]
 [ext_resource type="AudioStream" uid="uid://b1fprq2hjglgg" path="res://ASSETS/Audio/jump.mp3" id="5_ygxik"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_02ut4"]
-size = Vector3(100, 100, 335.8462)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q4fin"]
+radius = 0.6796875
+height = 3.5404053
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lc6e3"]
 animation = &"IDLE"
@@ -48,8 +49,8 @@ script = ExtResource("1_6nwty")
 transform = Transform3D(0.01, 0, 0, 0, -4.3711387e-10, -0.01, 0, 0.01, -4.3711387e-10, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=586658708]
-transform = Transform3D(0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, 0, 1.6113939, 0.02)
-shape = SubResource("BoxShape3D_02ut4")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5162401, 0.02)
+shape = SubResource("CapsuleShape3D_q4fin")
 
 [node name="DebugLabel" type="Label3D" parent="." unique_id=711537565]
 transform = Transform3D(0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, 0, 0, 0.04)

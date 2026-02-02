@@ -2,19 +2,9 @@
 
 [ext_resource type="Script" uid="uid://c8gru01obeynb" path="res://SCRIPTS/Components/ForcesManager.gd" id="1_bt1ra"]
 [ext_resource type="Script" uid="uid://dud6k667hnfaq" path="res://SCRIPTS/Class/EnumStages.gd" id="2_bt1ra"]
-
-[sub_resource type="Resource" id="Resource_cqlcp"]
-script = ExtResource("2_bt1ra")
-metadata/_custom_type_script = "uid://dud6k667hnfaq"
-
-[sub_resource type="Resource" id="Resource_jla3t"]
-script = ExtResource("2_bt1ra")
-metadata/_custom_type_script = "uid://dud6k667hnfaq"
-
-[sub_resource type="Resource" id="Resource_uo4v0"]
-script = ExtResource("2_bt1ra")
-metadata/_custom_type_script = "uid://dud6k667hnfaq"
+[ext_resource type="Resource" uid="uid://c60idrtxh4oo1" path="res://ASSETS/Resources/Themes/DesertStage2.tres" id="3_jla3t"]
+[ext_resource type="Resource" uid="uid://dimgjfabfqkd5" path="res://ASSETS/Resources/Themes/DesertStage3.tres" id="4_uo4v0"]
 
 [node name="ForcesManager" type="Node3D" unique_id=1700293308]
 script = ExtResource("1_bt1ra")
-stages = Array[ExtResource("2_bt1ra")]([SubResource("Resource_cqlcp"), SubResource("Resource_jla3t"), SubResource("Resource_uo4v0")])
+stages = Array[ExtResource("2_bt1ra")]([ExtResource("3_jla3t"), ExtResource("3_jla3t"), ExtResource("4_uo4v0")])
